@@ -15,10 +15,10 @@ public class DecoDataMain {
         data2.instanceCall();
 
         DecoData data3 = new DecoData();
-        data3.staticValue
+        int staticValue1 = data3.staticValue;
         int instanceValue = data3.instanceValue;
 
-        int staticValue = DecoData.staticValue;
+        //DecoData.staticValue
         //DecoData.instanceValue; //접근 불가
     }
 }
