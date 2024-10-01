@@ -12,7 +12,7 @@ public class SoundFlyMain {
 
        // flyAnimal(d); //fly 아니라 안댐
         flyAnimal(b);
-        flyAnimal(ck); 
+        flyAnimal(ck);
 
     }
 
