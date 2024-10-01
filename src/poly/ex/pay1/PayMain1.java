@@ -1,23 +1,29 @@
 package poly.ex.pay1;
 
+import java.util.Scanner;
+
 public class PayMain1 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         PayService payService = new PayService();
-        String payOption1 = "kakao";
-        int amount1 = 5000;
-        payService.processPay(payOption1, amount1);
 
-        String payOption2 = "naver";
-        int amount2 = 15000;
-        payService.processPay(payOption2, amount2);
+        while(true) {
+            System.out.println("결제 수단을 입력하세요");
+            String payOptions = sc.nextLine();
 
-        String payOption3 = "bad";
-        int amount3 = 10000;
-        payService.processPay(payOption3, amount3);
+            if(payOptions.equals("exit")) {
+                System.out.println("프로그램을 종료합니다.");
+                return;
+            }
 
-        String payOption4 = "new";
-        int amount4 = 20000;
-        payService.processPay(payOption4, amount4);
+            System.out.println("결제 금액 입력하세요");
+            int amount = sc.nextInt();
+            sc.nextLine(); //버퍼 뒤에 숫자만 읽어서 \n남을 수 있는 문제 방지
+
+            payService.processPay(payOptions, amount);
+
+        }
+
 
     }
 }
