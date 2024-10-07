@@ -21,5 +21,6 @@ public class ToStringMain2 {
         ObjectPrinter.print(d1);
         ObjectPrinter.print(d2);
 
+        Integer.toHexString(System.identityHashCode(d1)); //hash 주소 값 출력
     }
 }
