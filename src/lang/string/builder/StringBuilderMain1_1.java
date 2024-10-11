@@ -14,7 +14,7 @@ public class StringBuilderMain1_1 {
 
         sb.delete(1,2);
         System.out.println("delete: " + sb);
-        
+
         sb.reverse();
         System.out.println("reverse = "+sb);
 
