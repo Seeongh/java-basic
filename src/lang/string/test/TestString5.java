@@ -9,7 +9,7 @@ public class TestString5 {
         String str = "hello.txt";
         String ext = ".txt";
 
-        int midIndex = str.indexOf(".txt");
+        int midIndex = str.indexOf(ext);
         System.out.println("filename = " + str.substring(0,midIndex));
         System.out.println("extName = " + str.substring(midIndex));
     }
