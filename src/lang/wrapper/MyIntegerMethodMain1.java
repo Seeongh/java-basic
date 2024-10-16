@@ -5,7 +5,7 @@ package lang.wrapper;
  */
 public class MyIntegerMethodMain1 {
     public static void main(String[] args) {
-        MyInteger myInteger = new MyInteger(10);
+        MyInteger myInteger = new MyInteger(10);  
         myInteger.compareTo(5);
         myInteger.toString();
 
