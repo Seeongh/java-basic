@@ -19,6 +19,6 @@ public class MyIntegerNullMain1 {
             }
 
         }
-        return nul;; //값을 못찾으면 - 반환
+        return null; //값을 못찾으면 - 반환
     }
 }
