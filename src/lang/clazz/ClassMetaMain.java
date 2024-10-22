@@ -1,6 +1,7 @@
 package lang.clazz;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 import static java.lang.Class.forName;
 
@@ -22,7 +23,19 @@ public class ClassMetaMain
         }
 
 
+        //메서드 출력
+        Method[] methods = clazz.getDeclaredMethods() ;
+        for (Method method : methods) {
+            System.out.println("method = " + method);
+        }
+        //상위 클래스
+        System.out.println(clazz.getSuperclass().getName());
 
+        Class[] interfaces = clazz.getInterfaces();
+        for (Class i : interfaces) {
+            System.out.println("interface = " + i.getName());
+
+        }
 
     }
 }
