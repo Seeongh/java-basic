@@ -1,5 +1,7 @@
 package nested.local;
 
+import java.lang.reflect.Field;
+
 /**
  * 지역변수의 캡처
  */
@@ -12,7 +14,7 @@ public class LocalOuterV3 {
 
     public Printer process(int paramVar) {
         int localVar = 1; //지역변수는 스택 영역이 종료되는 순간 함께 제거된다.
-
+    //1. 지역변수를 복사해서 인스턴스 영역에 넣어버림(인스턴스에서 캠쳐)
         class LocalPrinter implements Printer {
             int value = 0;
             @Override
@@ -39,6 +41,16 @@ public class LocalOuterV3 {
 
         //printer.print() 를 나중에 실행한다. process()스택 프레임이 사라진 이후에 실행
         printer.print();
+
+        System.out.println("필드확인");
+        Field[] fields = printer.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println("field = " + field); //인스턴스 변수 , 캡쳐한 지역변수, 바깥 클래스 주소값도 가지고있음
+        }
+
+
     }
 
 }
+
+
