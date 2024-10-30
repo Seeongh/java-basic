@@ -3,9 +3,9 @@ package nested.local;
 import java.lang.reflect.Field;
 
 /**
- * 지역변수의 캡처
+ * 지역변수의 캡처 : 지역변수의 사실상 final 
  */
-public class LocalOuterV3 {
+public class LocalOuterV4 {
 
     private int outInstanceVar = 3;
 
@@ -13,7 +13,7 @@ public class LocalOuterV3 {
     //하지만 localPrinter은 process가 종료되어도 생존하고있다.
 
     public Printer process(final int paramVar) {
-        int localVar = 1; //지역변수는 스택 영역이 종료되는 순간 함께 제거된다.
+        final int localVar = 1; //지역변수는 스택 영역이 종료되는 순간 함께 제거된다.
     //1. 지역변수를 복사해서 인스턴스 영역에 넣어버림(인스턴스에서 캠쳐)
 
        // localVar = 2; //컴파일 오류 : 사실상 final (effectively final)
@@ -33,12 +33,16 @@ public class LocalOuterV3 {
 
         LocalPrinter printer = new LocalPrinter();
         //printer.print();
+
+        //만약 localVar 변경시 : 지역변수와 인스턴스 캡쳐 변수랑 값이 달라져 동기화 문제발생
+       // localVar = 10;
+       // paramVar =20;
         return printer;
     }
 
 
     public static void main(String[] args) {
-        LocalOuterV3 localouter = new LocalOuterV3();
+        LocalOuterV4 localouter = new LocalOuterV4();
         Printer printer = localouter.process(2); //이후에 지역변수가 없어짐
 
         //printer.print() 를 나중에 실행한다. process()스택 프레임이 사라진 이후에 실행
