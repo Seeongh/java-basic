@@ -3,7 +3,7 @@ package nested.local;
 import java.lang.reflect.Field;
 
 /**
- * 지역변수의 캡처 : 지역변수의 사실상 final 
+ * 지역변수의 캡처 : 지역변수의 사실상 final
  */
 public class LocalOuterV4 {
 
