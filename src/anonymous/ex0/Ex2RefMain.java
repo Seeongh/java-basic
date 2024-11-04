@@ -1,18 +1,33 @@
 package anonymous.ex0;
 
+import java.util.Random;
+
 /**
- * 중복 제거와 효율성의 핵심은 변하는 부분을 분리하여 재사용
+ * 중복제거 - 메소드
  */
-public class Ex2RefMain {
-    public static void hello(String helloStr) {
+public class Ex1RefMain {
+    public static void helloFunction(MethodFnc fnc) {
         System.out.println("시작");
-        System.out.println(helloStr);
+        fnc.exeFunc();
         System.out.println("종료");
     }
 
     public static void main(String[] args) {
-        hello("java");
-        hello("spring");
+        helloFunction(new MethodFnc() {
+            @Override
+            public void exeFunc() {
+                int i = new Random().nextInt(6) + 1;
+                System.out.println("주사위 :" + i);
+            }
+        });
 
+        helloFunction(new MethodFnc() {
+            @Override
+            public void exeFunc() {
+                for (int i =0 ; i < 3; i++) {
+                    System.out.println(" i = " + i);
+                }
+            }
+        });
     }
 }
