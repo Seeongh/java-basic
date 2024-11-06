@@ -17,7 +17,7 @@ public class MainV1 {
                 break;
             }
 
-            
+
             s.sendMessage(str);
             System.out.println();
         }
