@@ -36,7 +36,7 @@ public class MainV4 {
     private static void exceptionHandler(Exception e) {
         System.out.println("사용자 메세지 : " +  e.getMessage());
         //e.printStackTrace();
-        e.printStackTrace(System.out); // System.error : 흐름이 다름 
+        e.printStackTrace(System.out); // System.error : 흐름이 다름
 
         //별도 예외추가
         if( e instanceof SendExceptionV4 sendEx) {
