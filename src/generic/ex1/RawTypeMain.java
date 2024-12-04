@@ -8,6 +8,6 @@ public class RawTypeMain{
         GenericBox integerBox = new GenericBox(); //지정을 안하고 사용할 수 있음 Object타입으로 지정됨.
         //GenericBox<Object> integerBox = new GenericBox<>(); //권장
         integerBox.set(10);
-        Integer i = (Integer) integerBox.get();
+        (Integer) integerBox.get()
     }
 }
