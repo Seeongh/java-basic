@@ -6,7 +6,7 @@ public class NetworkServiceV5 {
         String address="http://example.com";
 
         try(NetworkClientV5 client = new NetworkClientV5(address)) { //자원을 명시적으로 지정. try문이 끝나면 해당 자원의 close 자동 호출
-            client.initError(data);
+            client.initError(data); //자원의 스코프가 좁다.
             client.connect();
             client.send(data);
 
