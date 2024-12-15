@@ -26,6 +26,6 @@ public class AnimalHospitalV3<T extends Animal> {
 
     public T bigger(Animal target) {
         //return null;
-        return animal.getSize() > target.getSize()? animal : target;
+        return animal.getSize() > target.getSize()? animal : (T) target;
     }
 }
