@@ -1,11 +1,11 @@
 package collection.array;
 
 /**
- * array 객체 사용예제
+ * array 객체 사용예제 + 동적 추가
  */
-public class MyArrayListV1Main {
+public class MyArrayListV2Main {
     public static void main(String[] args) {
-        MyArrayListV1 list = new MyArrayListV1();
+        MyArrayListV2 list = new MyArrayListV2();
         System.out.println("데이터 추가");
         System.out.println(list);
 
@@ -24,9 +24,8 @@ public class MyArrayListV1Main {
 
         System.out.println("범위 초과시");
         list.add("d");
-        list.add("e");
+        list.add("e"); //범위 확장
 
-        //범위 초과
         list.add("f");
         System.out.println(list); //indexOutofBound
 
