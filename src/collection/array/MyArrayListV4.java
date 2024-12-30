@@ -3,20 +3,19 @@ package collection.array;
 import java.util.Arrays;
 
 /**
- * arrayList
- * 다양한 데이터 보관
+ * 타입 호환성
  */
-public class MyArrayListV3 {
+public class MyArrayListV4<E> {
     private static final int DEFAULT_CAPACITY = 5;
 
     private Object[] elementData;
     private int size = 0;
 
-    public MyArrayListV3() {
+    public MyArrayListV4() {
         elementData = new Object[DEFAULT_CAPACITY];
     }
 
-    public MyArrayListV3(int initialCapacity) {
+    public MyArrayListV4(int initialCapacity) {
         elementData = new Object[initialCapacity];
     }
 
@@ -24,7 +23,7 @@ public class MyArrayListV3 {
         return size;
     }
 
-    public void add(Object e) {
+    public void add(E e) {
         //코드 추가
         if( size == elementData.length) {
             grow();
@@ -33,7 +32,7 @@ public class MyArrayListV3 {
         size++;
     }
 
-    public void add(int index, Object e) {
+    public void add(int index, E e) {
         //코드 추가
         if( size == elementData.length) {
             grow();
@@ -53,8 +52,8 @@ public class MyArrayListV3 {
 
     }
 
-    public Object remove(int index) {
-        Object oldValue = get(index) ;
+    public E remove(int index) {
+        E oldValue = get(index) ;
         shiftLeftFrom(index) ; //인덱스부터 왼쪽으로 민다.
         size--;
         elementData[size] = null;
@@ -83,12 +82,13 @@ public class MyArrayListV3 {
         elementData = newArr; //가리키는 참조값을 바꿈.
     }
 
-    public Object get(int index) {
-        return elementData[index];
+    @SuppressWarnings("unchecked")
+    public E get(int index) {
+        return (E)elementData[index];
     }
 
-    public Object set(int index, Object element) {
-        Object oldValue = get(index);
+    public E set(int index, E element) {
+        E oldValue = get(index);
         elementData[index] = element;
         return oldValue;
 
