@@ -16,7 +16,7 @@ public class MyArrayListV4<E> {
     }
 
     public MyArrayListV4(int initialCapacity) {
-        elementData = new Object[initialCapacity];
+        elementData = new Object[initialCapacity]; //제네릭은 런타임에 이레이저에 의해 타입정보가 다 사라져 new E[]는 불가능
     }
 
     public int size() {
