@@ -77,7 +77,6 @@ public class MyArrayListV4<E> {
 //            newArr[i]  = elementData[i];
 //        }
 
-
         Object[] newArr = Arrays.copyOf(elementData, newCapacity);
         elementData = newArr; //가리키는 참조값을 바꿈.
     }
@@ -86,7 +85,7 @@ public class MyArrayListV4<E> {
     public E get(int index) {
         return (E)elementData[index];
     } //다운캐스팅을 해주어야함 (들어간게 e타입이기 때문에)
-    
+
 
     public E set(int index, E element) {
         E oldValue = get(index);
