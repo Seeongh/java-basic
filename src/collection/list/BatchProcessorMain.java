@@ -1,5 +1,8 @@
 package collection.list;
 
+/**
+ * 컴파일 시점 의존관계
+ */
 public class BatchProcessorMain {
     public static void main(String[] args) {
        // MyArrayList<Integer> list = new MyArrayList<>(); //46ms
