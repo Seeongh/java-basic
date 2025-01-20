@@ -8,6 +8,7 @@ public class HashStart5 {
 
     public static void main(String[] args) {
         LinkedList<Integer>[] buckets = new LinkedList[CAPACITY];
+        //최적의 CAPACITY값을 찾아야됨 : 1은 O(n) , 11은 적절하게 나눠짐 O(n)/ 보통 입력 데이터 대비 75%이하면 자주 알어나진 않음
 
         //linked list 배열 초기화
         for(int i =0 ;i <CAPACITY; i++) {
