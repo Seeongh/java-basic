@@ -5,13 +5,9 @@ import java.util.*;
 
 public class JavaSetMain {
     public static void main(String[] args) {
-        run(new HashSet<>());
-        run(new LinkedHashSet<>());
-        run(new TreeSet<>());
-
-
-
-
+        run(new HashSet<>()); //입력 순서 미보장. O(1)
+        run(new LinkedHashSet<>()); //데이터를 순서대로 출력할 수 있음. O(1)
+        run(new TreeSet<>()); // 데이터 값 기준 정렬.
     }
 
     private static void run(Set<String> set) {
