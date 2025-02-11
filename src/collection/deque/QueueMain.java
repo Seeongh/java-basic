@@ -24,7 +24,7 @@ public class QueueMain {
         System.out.println("queue.poll()" + queue.poll());
 
         System.out.println(queue);
-        
+
 
     }
 }
