@@ -1,5 +1,6 @@
 package collection.iterator;
 
+import java.sql.SQLOutput;
 import java.util.Iterator;
 
 public class MyArrayMain {
@@ -12,6 +13,13 @@ public class MyArrayMain {
         while(!iterator.hasNext()) {
             Integer next = iterator.next();
             System.out.println("next = " + next);
+        }
+
+        //추가
+        //배열이거나 iterable이여야함
+        System.out.println("for-each 사용");
+        for( int value : myArray) {
+            System.out.println("value = " + value);
         }
     }
 }
