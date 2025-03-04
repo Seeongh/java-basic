@@ -28,4 +28,11 @@ public class JavaIterableMain {
             System.out.println(iterator.next());
         }
     }
+
+    private static void foreach(Iterable<Integer> iterator) {
+        //Iterable을 구현함 foreach를 사용할 수 있음
+        for(Integer i : iterator) {
+            System.out.println(i);
+        }
+    }
 }
