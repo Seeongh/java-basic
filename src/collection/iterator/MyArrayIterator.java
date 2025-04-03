@@ -11,7 +11,7 @@ public class MyArrayIterator implements Iterator<Integer> {
     private int[] targetArr;
 
     public MyArrayIterator(int[] currentIndex) {
-        this.currentIndex = currentIndex;
+     //   this.currentIndex = currentIndex;
     }
 
     @Override
