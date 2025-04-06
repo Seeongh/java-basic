@@ -1,6 +1,7 @@
 package collection.set;
 
 import collection.set.member.MemberHashNoEqReview;
+import collection.set.member.MemberNoHashEqReview;
 import collection.set.member.MemberNoHashNoEqReview;
 
 /**
@@ -28,7 +29,7 @@ public class HashCodeEquals {
         set.remove("A");
 
 
-        //2. hashcode만 구현한 경우
+        //2. hashcode만 구현한 경우 (값을 같은지 판단하지 못함)
         MemberHashNoEqReview h1 = new MemberHashNoEqReview("A");
         MemberHashNoEqReview h2 = new MemberHashNoEqReview("A");
         System.out.println("h1. hashcode = " + h1.hashCode() );
@@ -39,6 +40,15 @@ public class HashCodeEquals {
         set.add(h2);
         System.out.println(set);
         set.remove("A");
+
+        //3. equals만 구현한 경우
+        MemberNoHashEqReview e1 =new MemberNoHashEqReview("A");
+        MemberNoHashEqReview e2 =new MemberNoHashEqReview("A");
+
+        System.out.println("e1.hashcode = " + e1.hashCode());
+        System.out.println("e2.hashcode = " + e2.hashCode());
+        System.out.println("equasl = " + e1.equals(e2));
+
 
     }
 }
