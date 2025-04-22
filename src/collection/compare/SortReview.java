@@ -12,9 +12,11 @@ public class SortReview {
         Arrays.sort(array); //1,2,3
 
         System.out.println(Arrays.toString(array));
+        Arrays.sort(array, new AscComparator());
+        Arrays.sort(array, new AscComparator().reversed());
     }
 
-    static class AscOmparator implements Comparator<Integer> {
+    static class AscComparator implements Comparator<Integer> {
 
         @Override
         public int compare(Integer o1, Integer o2) {
