@@ -1,5 +1,12 @@
 package collection.link;
 
+/**
+ * 컬렉션 프레임 워크 선택 가이드
+ * 1. 순서가 중요하고 중복이 허용되는 경우 : list
+ * 2. 중복을 허용하지 않고 순서가 중요하지 않은 경우 : hashset
+ * 3. 키-값 쌍으로 저장하는 경우 : HashMap, LinkedHashMap(순서유지시), TreeMap(정렬 순서)
+ * 4. 요소 보관 : Queue, Dequeue
+ */
 public class MyLinkedListV1 {
     private Node first;
     private int size =0 ;

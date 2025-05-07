@@ -7,6 +7,8 @@ import java.util.Arrays;
  * 조회 : 자료형 byte 와 index 계산으로 찾음.
  * 한번의 계산으로 효율적으로 찾음
  * 검색 : 하나씩 확인하면서 검색시도
+ * 
+ * 컬렉션 : add, remove, size등 주요 메서드를 가지고있음
  */
 public class ArrayMain1 {
     public static void main(String[] args) {
