@@ -17,7 +17,8 @@ import static thread.util.MyLogger.log;
 public class BankMain {
     public static void main(String[] args) throws InterruptedException {
         //BankAccount account = new BankAccountV1(100000); //10만원 입금 -> 공유 자원
-        BankAccount account = new BankAccountV2(100000); //10만원 입금 -> 공유 자원
+        //BankAccount account = new BankAccountV2(100000); //10만원 입금 -> 공유 자원
+        BankAccount account = new BankAccountV3(100000); //10만원 입금 -> 공유 자원
 
         /**
          * 10만원 넣어놓고 7만원씩 2번 뺄 수 없을까?
