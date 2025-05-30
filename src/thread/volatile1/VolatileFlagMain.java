@@ -17,7 +17,9 @@ public class VolatileFlagMain {
     }
 
     static class MyTask implements  Runnable{
-        boolean runFlag = true;
+        //boolean runFlag = true;
+        volatile boolean runFlag = true; //main memory 에서 바로 읽어옴 (속도는 좀 줄어듦)
+        //여러쓰레드에서 값을 공유해야하는 경우 사용함
 
         /**
          * 중간에 캐시 메모리를 활용함
@@ -35,6 +37,7 @@ public class VolatileFlagMain {
             log("task 시작");
             while(runFlag) {
                 //runFlag 가 false면 탈출
+                //먼가 출력을하면 context switching이 일어남
             }
             log("task 종료");
         }
