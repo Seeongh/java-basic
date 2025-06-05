@@ -18,7 +18,8 @@ public class BankMain {
     public static void main(String[] args) throws InterruptedException {
         //BankAccount account = new BankAccountV1(100000); //10만원 입금 -> 공유 자원
         //BankAccount account = new BankAccountV2(100000); //10만원 입금 -> 공유 자원
-        BankAccount account = new BankAccountV3(100000); //10만원 입금 -> 공유 자원
+        //BankAccount account = new BankAccountV3(100000); //10만원 입금 -> 공유 자원
+        BankAccount account = new BankAccountV4(100000); //ReentrantLock
 
         /**
          * 10만원 넣어놓고 7만원씩 2번 뺄 수 없을까?
@@ -28,9 +29,11 @@ public class BankMain {
 
         t1.start();
         t2.start();
-        
-        //여기서 늦게 도는 쓰레드는 BLOCKED 상태를 가짐
 
+        //여기서 늦게 도는 쓰레드는 WAITING 상태를 가짐(ReentrantLock 에서 LockSupport의 part()호출
+
+        log("t1 쓰레드 상태:" + t1.getState());
+        log("t2 쓰레드 상태:" + t2.getState());
         t1.join();
         t2.join();
         log("Main 쓰레드 종료 남은 잔액 :" + account.getBalance());
