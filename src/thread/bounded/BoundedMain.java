@@ -16,7 +16,9 @@ public class BoundedMain {
         //1. queue 생성
         //BoundedQueue queue = new BoundedQueueV1(2); //자원을 낭비
         //BoundedQueue queue = new BoundedQueueV2(2); //while돌면서 sleep으로 대기
-        BoundedQueue queue = new BoundedQueueV3(2); //
+        //BoundedQueue queue = new BoundedQueueV3(2); // Object의 wait(), notify()사용
+        //BoundedQueue queue = new BoundedQueueV4(2); // ReentrantLock 사용
+        BoundedQueue queue = new BoundedQueueV5(2); // ReentrantLock 사용 - Condition 분리
 
         //2. 생t산자, 소비자 실행 순서 선택, 반드시 하나만 선택!
         
