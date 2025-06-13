@@ -9,6 +9,15 @@ import static thread.util.ThreadUtils.sleep;
 /**
  * 생산자/소비자 이슈
  * 생산자 3개 소비자 3개가 동작
+ *
+ * SYNCRONIZED 의 THREAD 대기
+ * 1. 락 획득 하기 위해 대기 (BLOCKED 상태) -> 자바 내부 락 대기 집합에서 관리
+ * 2. WAIT() 호출되어 대기(NOTIFY) -> 락 안의 스레드 대기 집합에서 관리
+ *
+ * 자바는 락, 락대기집합, 스레드 대기 집합이 객체 내부에 생성되어있음
+ *
+ * Reentrant Lock 의 대기
+ * 
  */
 public class BoundedMain {
     public static void main(String[] args) {
