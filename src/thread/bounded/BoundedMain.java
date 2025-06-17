@@ -17,7 +17,8 @@ import static thread.util.ThreadUtils.sleep;
  * 자바는 락, 락대기집합, 스레드 대기 집합이 객체 내부에 생성되어있음
  *
  * Reentrant Lock 의 대기
- * 
+ * lock 대기 큐가 있음 (WAITING 상태로 대기)
+ * Condition 객체 thread 대기 공간에서 WAITING 상태로 대기하다가 signal호출시 빠져나감
  */
 public class BoundedMain {
     public static void main(String[] args) {
