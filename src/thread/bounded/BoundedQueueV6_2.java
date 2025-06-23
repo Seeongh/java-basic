@@ -3,42 +3,38 @@ package thread.bounded;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+import static thread.util.MyLogger.log;
+
 /**
- * concurrent의 blockingqueue 사용하기
+ * concurrent의 BlockingQueue 사용하기
  * BoundedQueueV5와 동일함
  *
  * notEmpty : 소비자 condition
  * notfull : 생산자 condition
  *
  * 큐 찼을떄 선택지
- * 1. 예외 던지기
- * 2. 즉시 false
- * 3. 대기(interrupt 제공)
- * 4. 특정시간만큼만 대기(interrupt 제공)
+ * 1. 즉시 반환
+ * offer() -> 확인하고 큐가 가득 찼으면 false
+ * poll() -> 데이터없으면 null반환
+ *
  */
-public class BoundedQueueV6_1 implements BoundedQueue{
+public class BoundedQueueV6_2 implements BoundedQueue{
     private BlockingQueue<String> queue;
 
-    public BoundedQueueV6_1(int max) {
+    public BoundedQueueV6_2(int max) {
         this.queue = new ArrayBlockingQueue<>(max);
     }
 
     @Override
     public void put(String data) {
-        try {
-            queue.put(data);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
+        boolean offer = queue.offer(data);
+        log("저장 시도 결과 = " + offer);
     }
 
     @Override
     public String take() {
-        try {
-            return queue.take();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+            return queue.poll();
     }
 
     @Override

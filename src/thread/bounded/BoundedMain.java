@@ -29,7 +29,11 @@ public class BoundedMain {
         //BoundedQueue queue = new BoundedQueueV3(2); // Object의 wait(), notify()사용
         //BoundedQueue queue = new BoundedQueueV4(2); // ReentrantLock 사용
         //BoundedQueue queue = new BoundedQueueV5(2); // ReentrantLock 사용 - Condition 분리
-        BoundedQueue queue = new BoundedQueueV6_1(2); // ReentrantLock 사용 - Blckingqueue 사용
+        //BoundedQueue queue = new BoundedQueueV6_1(2); // ReentrantLock 사용 - Blockingqueue 사용
+        //BoundedQueue queue = new BoundedQueueV6_2(2); // ReentrantLock 사용 - 바로 반환(offer,pull)
+        //BoundedQueue queue = new BoundedQueueV6_3(2); // ReentrantLock 사용 - 시간대기 후 반환(offer,pull)
+        BoundedQueue queue = new BoundedQueueV6_4(2); // ReentrantLock 사용 - 예외반환(add, remove)
+
 
         //2. 생t산자, 소비자 실행 순서 선택, 반드시 하나만 선택!
         
