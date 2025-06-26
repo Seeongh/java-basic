@@ -16,7 +16,14 @@ public class IncrementThreadMain {
     public static final int THREAD_COUNT = 1000;
 
     public static void main(String[] args) throws InterruptedException {
-        test(new BasicInteger());
+        //test(new BasicInteger());
+        //test(new VolatileInteger()); // volatile 붙여도 똑같음 -> 변수를 메모리에서 바로 읽는다해도 해당 변수를 공유하기떄문에 다르지않음
+        /**
+         * 원자적 연산이 되지 않았기 때문에 임계영역이 보장되어야함
+         */
+        //test(new SyncInteger());  //안전한 임계영역
+        test(new MyAtomicInteger());  //atomic integer 사용
+
     }
 
     private static void test(IncrementInteger incrementInteger) throws InterruptedException {

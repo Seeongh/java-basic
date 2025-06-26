@@ -1,11 +1,11 @@
 package thread.cas.increment;
 
-public class BasicInteger implements IncrementInteger{
+public class VolatileInteger implements IncrementInteger{
 
-    private int value; //공유 가능 자원
+    volatile private int value;
     @Override
     public void increment() {
-        value ++;
+        value++;
     }
 
     @Override
