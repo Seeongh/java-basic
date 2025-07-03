@@ -20,7 +20,7 @@ public class MyTestMain {
 
         thread1.join();
         thread2.join();
-        
+
         log("proxy result = " + syncProxyList.toString());
         log("basic result = " + syncProxyList.toString());
     }
