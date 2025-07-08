@@ -11,6 +11,13 @@ import java.util.List;
  * 1. 동기화 오버헤드 (성능 저하)
  * 2. 잠금범위가 넓어 병렬처리 효율성 저하
  * 3. 정교한 동기화 불가
+ *
+ * 동시성 컬렉션
+ * list <-> CopyOnWriterArrayList
+ * Set <-> CopyOnWriterArraySet(HashSet), ConcurrentSkipListSet(TreeSet)
+ * Map <-> ConcurrentHashMap(HashMap), ConcurrentSkipListMap(TreeMap)
+ * Queue <-> ConcurrentLinkedQueue
+ * Dequeue <-> ConcurrentLinkedDequeue
  */
 public class SynchronizedListMain {
     public static void main(String[] args) {
